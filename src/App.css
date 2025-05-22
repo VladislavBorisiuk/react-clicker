@@ -1,18 +1,28 @@
-body, html, #root {
+html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #111827;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-attachment: fixed;
+  overflow-x: hidden; /* защита от горизонтального скролла */
 }
 
 .app-container {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  background-color: transparent; /* чтобы фон не перекрывался */
+}
+.click-button.active, 
+.click-button.disabled {
+  pointer-events: none; /* Отключить все события клика */
+  user-select: none;    /* Запретить выделение */
+  opacity: 0.7;         /* Сделать чуть прозрачнее, чтобы показать неактивность */
 }
 
 .clicker-container {

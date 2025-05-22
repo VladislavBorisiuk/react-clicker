@@ -31,7 +31,7 @@ export default function App() {
   const handleClick = () => {
     setCount(prev => prev + clickPower)
     setIsClicked(true)
-  }
+  };
 
   useEffect(() => {
     if (isClicked) {
@@ -123,12 +123,12 @@ export default function App() {
           <p className="click-power">Сила клика: {clickPower}</p>
 
           <img
-            src={currentSkin}
-            alt="Кнопка"
-            onClick={handleClick}
-            style={{ transform: isClicked ? 'scale(0.9)' : 'scale(1)', transition: 'transform 200ms ease' }}
-            className="click-button"
-          />
+      src={currentSkin}
+      alt="Кнопка"
+      onClick={handleClick}
+      style={{ transform: isClicked ? 'scale(0.9)' : 'scale(1)', transition: 'transform 200ms ease' }}
+      className={`click-button`} 
+    />
 
           <div className="upgrades">
             <h2>Апгрейды</h2>
