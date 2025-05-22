@@ -17,12 +17,16 @@ html, body, #root {
   align-items: center;
   padding: 1rem;
   background-color: transparent; /* чтобы фон не перекрывался */
+  outline: none;
+  border: none;
 }
 .click-button.active, 
 .click-button.disabled {
   pointer-events: none; /* Отключить все события клика */
   user-select: none;    /* Запретить выделение */
   opacity: 0.7;         /* Сделать чуть прозрачнее, чтобы показать неактивность */
+  outline: none;
+  border: none;
 }
 
 .clicker-container {
