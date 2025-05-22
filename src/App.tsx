@@ -24,7 +24,7 @@ function App() {
     { id: 3, title: '+10 к клику', cost: 100, value: 10 },
   ])
 
-  const [skins, setSkins] = useState<Skin[]>([
+  const [skins] = useState<Skin[]>([
     {
       id: 1,
       name: 'Сова ',
