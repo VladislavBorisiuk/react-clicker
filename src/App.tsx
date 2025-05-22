@@ -9,11 +9,12 @@ export default function App() {
   const [clickPower, setClickPower] = useState(1)
   const [isClicked, setIsClicked] = useState(false)
 
-  const upgrades = [
-    { id: 1, title: '+1 к клику', cost: 10, value: 1 },
-    { id: 2, title: '+5 к клику', cost: 50, value: 5 },
-    { id: 3, title: '+10 к клику', cost: 100, value: 10 },
-  ]
+  const [upgrades, setUpgrades] = useState([
+  { id: 1, title: '+1 к клику', cost: 10, value: 1 },
+  { id: 2, title: '+5 к клику', cost: 50, value: 5 },
+  { id: 3, title: '+10 к клику', cost: 100, value: 10 },
+])
+
 
   const skins = [
     { id: 1, name: 'Сова', cost: 0, img: 'sova.png' },
@@ -41,11 +42,20 @@ export default function App() {
   }, [isClicked])
 
   const buyUpgrade = (upgrade: typeof upgrades[0]) => {
-    if (count >= upgrade.cost) {
-      setCount(count - upgrade.cost)
-      setClickPower(prev => prev + upgrade.value)
-    }
+  if (count >= upgrade.cost) {
+    setCount(count - upgrade.cost)
+    setClickPower(prev => prev + upgrade.value)
+
+    setUpgrades((prevUpgrades) =>
+      prevUpgrades.map((u) =>
+        u.id === upgrade.id
+          ? { ...u, cost: Math.floor(u.cost * 1.5) }  // увеличиваем стоимость на 50%
+          : u
+      )
+    )
   }
+}
+
 
   const buySkin = (skin: typeof skins[0]) => {
     if (ownedSkinIds.includes(skin.id)) {
