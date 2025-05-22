@@ -51,7 +51,17 @@ html, body, #root {
   user-select: none;
   background-color: transparent;
   object-fit: contain;
+
+  outline: none;
+  border: none;
 }
+
+.click-button:focus,
+.click-button:active {
+  outline: none;
+  border: none;
+}
+
 
 .upgrades {
   margin-top: 2rem;
