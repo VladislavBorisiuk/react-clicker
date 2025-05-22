@@ -47,6 +47,11 @@ html, body, #root {
 }
 
 .click-button {
+  -webkit-tap-highlight-color: transparent; /* Убирает эффект выделения на мобильных */
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+
   width: 128px;
   height: 128px;
   cursor: pointer;
