@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root {
+  height: 100%;
+  margin: 0;
+}
 
 a {
   font-weight: 500;
@@ -24,11 +28,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111827; /* Лучше для Tailwind темной темы */
 }
+
 
 h1 {
   font-size: 3.2em;
